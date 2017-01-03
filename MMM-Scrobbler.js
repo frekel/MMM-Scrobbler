@@ -38,7 +38,29 @@ Module.register("MMM-Scrobbler",{
 			this.failedCounter = 0;
 			this.delay = this.config.updateInterval;
 			this.show(this.config.animationSpeed);
-			var html = "<div class='player bright'><div class='album-art-container'><div class='album-art'><img src='"+ this.songData.image +"' width='200'></div></div><div class='meta'><table class='small'><tr class='track-name bright'><td>"+this.songData.title+"</td></tr><tr class='artist-name'><td>"+this.songData.artist +"</td></tr><tr class='album-name dimmed'><td>"+this.songData.album+"</td></tr></table></div></div>";
+			wrapper.className = this.config.displayType;
+
+			var songDataImage = this.songData.image;
+			if (songDataImage == '')
+			{
+				songDataImage = "http://www.shutterstock.com/music/static/1.0.64/implementation/images/album_artwork_placeholder_detail.jpg";
+			}
+
+			var html = "";
+			if (this.config.displayName === true)
+			{
+				html = html + "<header class='module-header'>Currently playing:</header>";
+			}
+			if (this.config.displayType == 'small')
+			{
+
+				html = html + "<div class='player bright'><div class='album-art-container'><div class='album-art'><img src='"+ songDataImage +"' width='80'></div></div><div class='meta'><table class='small'><tr class='track-name bright'><td>"+this.songData.title+"</td></tr><tr class='artist-name'><td>"+this.songData.artist +"</td></tr><tr class='album-name dimmed'><td>"+this.songData.album+"</td></tr></table></div><br clear='all'/></div>";
+			}
+			else
+			{
+				html = html + "<div class='player bright'><div class='album-art-container'><div class='album-art'><img src='"+ songDataImage +"' width='200'></div></div><div class='meta'><table class='small'><tr class='track-name bright'><td>"+this.songData.title+"</td></tr><tr class='artist-name'><td>"+this.songData.artist +"</td></tr><tr class='album-name dimmed'><td>"+this.songData.album+"</td></tr></table></div></div>";
+			}
+
 			wrapper.innerHTML = html;
 		}
 		else{

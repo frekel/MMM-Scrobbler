@@ -1,25 +1,76 @@
-.player{
-margin-top:20px;
-width:200px;
+.player {
+	//margin-top:20px;
+	width:200px;
 }
-.album-art-container{
-}
-.album-art{
-width:200px;
+.small .player {
+	width:100% !important;
+	min-width: 340px;
 }
 
-.meta{
+
+.album-art-container {
 
 }
-.track-name{
-font-size:20px;
-font-weight: bold;
-margin: 0;
+.small .album-art-container {
+	float:left;
+	width:25%;
 }
-.artist-name{
-font-size:20px;
-margin: 0px;}
+.right .album-art-container {
+	float:right;
+}
 
-.album-name{
-font-size:16px;
-margin: 0px;}
+.album-art {
+	width:200px;
+}
+
+.small .album-art {
+	width:100% !important;
+}
+
+.album-art img {
+	border: 1px solid #fff;
+	 -webkit-box-shadow: 1px 1px 1px #777;
+	 -moz-box-shadow: 1px 1px 1px #777;
+	  box-shadow: 1px 1px 1px #777;
+}
+
+.album-art p {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	bottom: 0px;
+	font: 400 18px/1 'Kaushan Script', cursive;
+	color: #888;
+}
+
+.meta {
+
+}
+.small .meta {
+	float:left;
+	margin-left:1%;
+	width:74%
+}
+.right .small .meta {
+	margin-right:5% !important;
+	margin-left:1% !important;
+	width:66% !important;
+}
+
+.track-name {
+	font-size:20px;
+	font-weight: bold;
+	margin: 0;
+}
+
+
+.artist-name {
+	font-size:20px;
+	margin: 0px;
+}
+
+
+.album-name {
+	font-size:16px;
+	margin: 0px;
+}
